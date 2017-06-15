@@ -5,17 +5,45 @@
 //  Created by Temp User on 2017-05-15.
 //  Copyright © 2017 Existentializm. All rights reserved.
 //
-
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Initialize Parse.
+        // Replace YOUR_APP_ID and URL_TO_YOUR_PARSE_SERVER with the values you chose when you installed your Parse server.
+        let configuration = ParseClientConfiguration { clientConfiguration in
+            clientConfiguration.applicationId = "Liz1"
+            clientConfiguration.server = "https://liz-parse-server.herokuapp.com/parse"
+        }
+        Post.registerSubclass()
+        Activity.registerSubclass()
+        Parse.initialize(with: configuration)
+        
+        let user = PFUser()
+        let username = "liz"
+        let password = "Liz1"
+        user.username = username
+        user.password = password
+        user.signUpInBackground(block: { (success, error) -> Void in
+            if success {
+                print("successfully signuped a user")
+            }else {
+                PFUser.logInWithUsername(inBackground: username, password: password, block: { (user, error) -> Void in
+                    if let user = user {
+                        print("successfully logged in \(user)")
+                    }
+                })
+            }
+        })
+        
         return true
     }
 
@@ -43,4 +71,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
+
 
