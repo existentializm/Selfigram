@@ -127,14 +127,14 @@
                                                 <action selector="likeButtonClicked:" destination="kjx-xY-kpc" eventType="touchUpInside" id="o11-mH-IlD"/>
                                             </connections>
                                         </button>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="hearts-on" translatesAutoresizingMaskIntoConstraints="NO" id="CJL-VW-Ore">
-                                            <rect key="frame" x="148.5" y="61" width="23" height="128"/>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hearts-on" translatesAutoresizingMaskIntoConstraints="NO" id="CJL-VW-Ore">
+                                            <rect key="frame" x="148.5" y="150" width="23" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="23" id="WWU-0z-MFB"/>
                                                 <constraint firstAttribute="height" constant="20" id="jgM-y3-zCF"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7l-Om-HPw" userLabel="Username">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7l-Om-HPw" userLabel="Username">
                                             <rect key="frame" x="6" y="258" width="79" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -143,13 +143,14 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="CJL-VW-Ore" firstAttribute="centerX" secondItem="uIK-l1-OsA" secondAttribute="centerX" id="DZx-54-8TU"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="W7l-Om-HPw" secondAttribute="trailing" constant="280" id="Fzz-MD-bJV"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="W7l-Om-HPw" secondAttribute="trailing" constant="227" id="Fzz-MD-bJV"/>
                                         <constraint firstItem="PRO-Yq-aRv" firstAttribute="top" secondItem="uIK-l1-OsA" secondAttribute="bottom" constant="8" id="I5w-cY-uwl"/>
                                         <constraint firstAttribute="trailing" secondItem="uIK-l1-OsA" secondAttribute="trailing" id="Sff-QL-6OK"/>
                                         <constraint firstAttribute="trailing" secondItem="PRO-Yq-aRv" secondAttribute="trailing" constant="8" id="fh7-8W-GZN"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="W7l-Om-HPw" secondAttribute="bottom" constant="33" id="ia0-fI-4b0"/>
                                         <constraint firstItem="W7l-Om-HPw" firstAttribute="top" secondItem="uIK-l1-OsA" secondAttribute="bottom" constant="8" symbolic="YES" id="mZl-E9-qtd"/>
                                         <constraint firstItem="uIK-l1-OsA" firstAttribute="leading" secondItem="0IZ-xr-qdX" secondAttribute="leading" id="qmT-E0-9jf"/>
+                                        <constraint firstItem="CJL-VW-Ore" firstAttribute="centerY" secondItem="0IZ-xr-qdX" secondAttribute="centerY" id="wPS-Xa-mvz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

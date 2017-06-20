@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize Parse.
         // Replace YOUR_APP_ID and URL_TO_YOUR_PARSE_SERVER with the values you chose when you installed your Parse server.
         let configuration = ParseClientConfiguration { clientConfiguration in
-            clientConfiguration.applicationId = "5CDeHX2xNhW11QZXr9AvtBbEQY0lft4jpUuMFt9g"
-            clientConfiguration.server = "https://parse-server-ios-main.herokuapp.com/parse"
+            clientConfiguration.applicationId = "Liz1"
+            clientConfiguration.server = "https://liz-parse-server.herokuapp.com/parse"
         }
         Post.registerSubclass()
         Activity.registerSubclass()
