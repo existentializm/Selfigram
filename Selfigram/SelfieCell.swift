@@ -11,11 +11,12 @@ import UIKit
 import Parse
 
 class SelfieCell: UITableViewCell {
-
+    
     @IBOutlet weak var selfieImageView: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
-    
+    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var heartAnimationView: UIImageView!
     var post:Post? {
         
         // didSet is run when we set this variable in FeedViewController
@@ -65,7 +66,30 @@ class SelfieCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func tapAnimation() {
+        
+        // set heartAnimationView to be very tiny and not hidden
+        self.heartAnimationView.isHidden = false
+        self.heartAnimationView.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        //animation for 1 second, no delay
+        UIView.animate(withDuration: 1.0, delay: 0, options: [], animations: { () -> Void in
+            
+            // during our animation change heartAnimationView to be 3X what it is on storyboard
+            self.heartAnimationView.transform = CGAffineTransform(scaleX: 3, y: 3)
+            
+        }) { (success) -> Void in
+            
+            // when animation is complete set heartAnimationView to be hidden
+            self.heartAnimationView.isHidden = true
+        }
+        
+        likeButtonClicked(likeButton)
+        
+    }
 
+    
     @IBAction func likeButtonClicked(_ sender: UIButton) {
         
         // the ! symbol means NOT
@@ -100,7 +124,7 @@ class SelfieCell: UITableViewCell {
                         
                         
                     }else{
-                        print("error is \(error)")
+                        print("error is \(String(describing: error))")
                     }
                 })
                 
@@ -136,18 +160,19 @@ class SelfieCell: UITableViewCell {
                         }
                         
                     }else{
-                        print("error is \(error)")
+                        print("error is \(String(describing: error))")
                     }
                 })
                 
             }
-                
             
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+            
+            func setSelected(_ selected: Bool, animated: Bool) {
+                super.setSelected(selected, animated: animated)
+                
+                // Configure the view for the selected state
+            }
+            
+        }
     }
-
-}
 }
