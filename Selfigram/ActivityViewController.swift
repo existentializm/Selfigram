@@ -42,6 +42,10 @@ class ActivityViewController: UITableViewController {
             })
         }
     }
+    
+    @IBAction func refreshPulled(_ sender: UIRefreshControl) {
+        userActivity
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -179,6 +179,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="mRF-oM-WJJ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refreshPulled:" destination="ysv-xK-Ba8" eventType="valueChanged" id="S2A-nm-5Ka"/>
@@ -230,6 +231,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lYw-Sj-zp0"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="oR5-dw-T0l">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshPulled:" destination="7qA-lP-5RL" eventType="valueChanged" id="7eT-dH-AqB"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9G-aG-ln1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
